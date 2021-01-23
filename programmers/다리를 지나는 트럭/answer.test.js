@@ -19,8 +19,7 @@ function solution(bridge_length, weight, truck_weights) {
     if (currentTruck + currentWeight <= weight) {
       ing.unshift(currentTruck);
       currentWeight += currentTruck;
-    }
-    else {
+    } else {
       ing.unshift(0);
       truck_weights.unshift(currentTruck);
     }
@@ -28,3 +27,11 @@ function solution(bridge_length, weight, truck_weights) {
   }
   return time;
 }
+
+test('Test case', () => {
+  expect(solution(2, 10, [7, 4, 5, 6])).toBe(8);
+  expect(solution(100, 100, [10])).toBe(101);
+  expect(solution(100, 100, [10, 10, 10, 10, 10, 10, 10, 10, 10, 10])).toBe(
+    110
+  );
+});

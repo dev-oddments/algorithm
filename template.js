@@ -70,10 +70,13 @@ const problemNumber = process.argv[2];
 
   if (!existsSync(`programmers/${title}`)) {
     mkdirSync(`programmers/${title}`);
-    writeFileSync(`programmers/${title}/answer.test.js`, initSolution + testCode);
+    writeFileSync(
+      `programmers/${title}/answer.test.js`,
+      initSolution + testCode
+    );
     writeFileSync(
       `programmers/${title}/README.md`,
-      `# ${title}\n## What\n` +
+      `# [${title} / ${problemNumber}](https://programmers.co.kr/learn/courses/30/lessons/${problemNumber}?language=javascript)\n## What\n` +
         problemDescription +
         '\n\n## How\n\n## Retrospective'
     );

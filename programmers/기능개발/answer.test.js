@@ -23,3 +23,12 @@ function solution(progresses, speeds) {
 
   return answer;
 }
+
+test('Test case', () => {
+  expect(solution([93, 30, 55], [1, 30, 5])).toBe([2, 1]);
+  expect(solution([95, 90, 99, 99, 80, 99], [1, 1, 1, 1, 1, 1])).toBe([
+    1,
+    3,
+    2,
+  ]);
+});
