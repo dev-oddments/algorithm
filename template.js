@@ -60,7 +60,7 @@ const problemNumber = process.argv[2];
     testCode += '  expect(solution(';
     eachCase.forEach((each, index) => {
       if (index === eachCase.length - 1) {
-        return (testCode += ')).toBe(' + each + ');\n');
+        return (testCode += ')).toEqual(' + each + ');\n');
       }
       return (testCode += each + (index < eachCase.length - 2 ? ', ' : ''));
     });
@@ -78,7 +78,7 @@ const problemNumber = process.argv[2];
       `programmers/${title}/README.md`,
       `# [${title} / ${problemNumber}](https://programmers.co.kr/learn/courses/30/lessons/${problemNumber}?language=javascript)\n## What\n` +
         problemDescription +
-        '\n\n## How\n\n## Retrospective'
+        `\n> 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/courses/30/lessons/${problemNumber}\n\n## How\n\n## Retrospective`
     );
   } else {
     console.log('이미 폴더가 존재합니다.');
